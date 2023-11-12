@@ -27,7 +27,12 @@ app.post('/generate-text', async (req, res) => {
         // Make a call to the OpenAI API using the chat completion method
         const gptResponse = await openai.chat.completions.create({
             model: "gpt-3.5-turbo", // Keep the model if using the chat completion endpoint
-            messages: [{ role: "user", content: userInput }], // Format for chat completion
+            messages: [
+                { role: "user", content: userInput },
+                { role: "user", content: "identify the topic sentence, if you cant find one then make one"},
+                { role: "user", content: "give two ideas on how to develop the plot"},
+                { role: "user", content: "identify if there any plot holes"},
+            ], // Format for chat completion
             // You can add other parameters as needed, similar to the completions endpoint
         });
 
