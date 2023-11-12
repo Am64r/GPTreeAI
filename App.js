@@ -59,13 +59,20 @@ function App() {
           {isLoading ? 'Generating...' : 'Generate'}
         </button>
       </div>
+      
       <div className="messages">
         {conversation.map((message, index) => (
-          <p key={index} className={message.role === 'user' ? 'userText' : 'generatedText'}>
+          <div key={index} className={message.role === 'user' ? 'userText' : 'generatedText'}>
+            {message.role !== 'user' && (
+              <header className="second-header">
+                <h2>Analysis</h2>
+              </header>
+            )}
             {message.content}
-          </p>
-        ))}
-      </div>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }
