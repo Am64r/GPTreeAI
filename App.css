@@ -74,5 +74,10 @@ p {
   font-size: 1.2rem;
 }
 
+.second-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #61dafb
+}
 
 /* Add more styles as needed */
